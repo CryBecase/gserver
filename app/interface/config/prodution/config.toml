@@ -1,0 +1,13 @@
+[server]
+name = "interface"
+addr = "127.0.0.1"
+
+[mysql]
+writeDSN = "test:test@tcp(127.0.0.1:3306)/test?timeout=5s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4"
+readDSN = ["test:test@tcp(127.0.0.1:3306)/test?timeout=5s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4"]
+active = 20
+idle = 10
+idleTimeout = "4h"
+queryTimeout = "100ms"
+execTimeout = "100ms"
+tranTimeout = "200ms"
