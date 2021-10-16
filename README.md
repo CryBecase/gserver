@@ -1,4 +1,4 @@
-# Go Web Structure
+# Go Server
 
 本项目有三个分支，分别存放了不同背景下的 Go 目录结构以及示例代码。
 
