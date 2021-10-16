@@ -15,8 +15,8 @@ import (
 	"strings"
 	"sync"
 
-	"my-library/pkg/net/http/gin/internal/bytesconv"
-	"my-library/pkg/net/http/gin/render"
+	"gserver/pkg/net/http/gin/internal/bytesconv"
+	"gserver/pkg/net/http/gin/render"
 )
 
 const defaultMultipartMemory = 32 << 20 // 32 MB

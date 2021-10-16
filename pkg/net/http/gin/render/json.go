@@ -10,8 +10,8 @@ import (
 	"html/template"
 	"net/http"
 
-	"my-library/pkg/net/http/gin/internal/bytesconv"
-	"my-library/pkg/net/http/gin/internal/json"
+	"gserver/pkg/net/http/gin/internal/bytesconv"
+	"gserver/pkg/net/http/gin/internal/json"
 )
 
 // JSON contains the given interface object.

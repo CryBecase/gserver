@@ -7,7 +7,7 @@ package gin
 import (
 	"log"
 
-	"my-library/pkg/net/http/gin/binding"
+	"gserver/pkg/net/http/gin/binding"
 )
 
 // BindWith binds the passed struct pointer using the specified binding engine.

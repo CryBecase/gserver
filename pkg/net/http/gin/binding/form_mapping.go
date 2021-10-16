@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"my-library/pkg/net/http/gin/internal/bytesconv"
-	"my-library/pkg/net/http/gin/internal/json"
+	"gserver/pkg/net/http/gin/internal/bytesconv"
+	"gserver/pkg/net/http/gin/internal/json"
 )
 
 var (

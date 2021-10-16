@@ -8,7 +8,7 @@ import (
 	"io"
 	"os"
 
-	binding2 "my-library/pkg/net/http/gin/binding"
+	binding2 "gserver/pkg/net/http/gin/binding"
 )
 
 // EnvGinMode indicates environment name for gin mode.

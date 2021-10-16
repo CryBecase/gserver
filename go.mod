@@ -1,4 +1,4 @@
-module my-library
+module gserver
 
 go 1.16
 

@@ -10,7 +10,7 @@ import (
 	"io"
 	"net/http"
 
-	"my-library/pkg/net/http/gin/internal/json"
+	"gserver/pkg/net/http/gin/internal/json"
 )
 
 // EnableDecoderUseNumber is used to call the UseNumber method on the JSON

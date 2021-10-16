@@ -22,8 +22,8 @@ import (
 
 	"github.com/gin-contrib/sse"
 
-	"my-library/pkg/net/http/gin/binding"
-	render2 "my-library/pkg/net/http/gin/render"
+	"gserver/pkg/net/http/gin/binding"
+	render2 "gserver/pkg/net/http/gin/render"
 )
 
 // Content-Type MIME of the most common data formats.
