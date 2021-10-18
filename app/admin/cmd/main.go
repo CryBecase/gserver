@@ -9,6 +9,11 @@ import (
 
 	"gserver/app/admin/internel/config"
 	"gserver/app/admin/internel/server/http"
+
+	_ "gserver/pkg/encoding/form"
+	_ "gserver/pkg/encoding/json"
+	_ "gserver/pkg/encoding/xml"
+	_ "gserver/pkg/encoding/yaml"
 )
 
 func main() {
