@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/gin-contrib/sse v0.1.0
+	github.com/go-playground/form/v4 v4.2.0
 	github.com/go-playground/validator/v10 v10.9.0
 	github.com/goccy/go-json v0.7.9
 	github.com/json-iterator/go v1.1.12
@@ -12,4 +13,5 @@ require (
 	github.com/ugorji/go/codec v1.2.6
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/yaml.v2 v2.4.0
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
