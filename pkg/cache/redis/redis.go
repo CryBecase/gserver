@@ -1,11 +1,19 @@
 package redis
 
+import (
+	"github.com/go-redis/redis/v8"
+)
+
+const Nil = redis.Nil
+
 type Redis struct {
-	c *Config
+	*redis.Client
+
+	cfg *Config
 }
 
 func New(c *Config) *Redis {
 	return &Redis{
-		c: c,
+		cfg: c,
 	}
 }
