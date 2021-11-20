@@ -78,8 +78,24 @@ func (q *query) ForUpdate() *query {
 	return q
 }
 
+func (q *query) Update(value interface{}) error {
+	if err := q.db.Save(value).Error; err != nil {
+		return err
+	}
+	if q.cache != nil {
+		return q.cache.redis.Del(context.TODO(), q.cache.key).Err()
+	}
+	return nil
+}
+
 func (q *query) Insert(value interface{}) error {
-	return q.db.Save(value).Error
+	if err := q.db.Create(value).Error; err != nil {
+		return err
+	}
+	if q.cache != nil {
+		return q.cache.redis.Del(context.TODO(), q.cache.key).Err()
+	}
+	return nil
 }
 
 func (q *query) InsertIgnore() *query {
