@@ -10,9 +10,6 @@ readDSN = ["test:test@tcp(127.0.0.1:3306)/test?timeout=5s&readTimeout=5s&writeTi
 active = 20
 idle = 10
 idleTimeout = "4h"
-readTimeout = "100ms"
-writeTimeout = "100ms"
-tranTimeout = "200ms"
 
 [redis]
 name = "test"
@@ -25,15 +22,3 @@ dialTimeout = "1s"
 readTimeout = "1s"
 writeTimeout = "1s"
 expire = "720h"
-
-[memcache]
-name = "test"
-proto = "tcp"
-addr = "127.0.0.1:11211"
-active = 10
-idle = 5
-idleTimeout = "10s"
-dialTimeout = "1s"
-readTimeout = "1s"
-writeTimeout = "1s"
-expire = "24h"

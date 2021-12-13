@@ -5,7 +5,6 @@ import (
 
 	"github.com/spf13/viper"
 
-	"gserver/pkg/cache/memcache"
 	"gserver/pkg/cache/redis"
 	"gserver/pkg/databse/mysql"
 )
@@ -16,10 +15,9 @@ var (
 )
 
 type Config struct {
-	Server   *Server          `mapstructure:"server"`
-	MySQL    *mysql.Config    `mapstructure:"mysql"`
-	Redis    *redis.Config    `mapstructure:"redis"`
-	Memcache *memcache.Config `mapstructure:"memcache"`
+	Server *Server       `mapstructure:"server"`
+	MySQL  *mysql.Config `mapstructure:"mysql"`
+	Redis  *redis.Config `mapstructure:"redis"`
 }
 
 type Server struct {

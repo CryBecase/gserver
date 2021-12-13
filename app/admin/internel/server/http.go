@@ -1,14 +1,17 @@
-package http
+package server
 
 import (
 	"gserver/app/admin/internel/config"
+	"gserver/app/admin/internel/router"
 	"gserver/pkg/net/http/gin"
 )
 
-func Init(c *config.Config) {
-	gin.SetMode(gin.ReleaseMode)
+func InitHTTP(c *config.Config) {
 	e := gin.New()
 	e.Use(gin.Logger(), gin.Recovery()) // TODO 用自己的代替 或者 重写 gin
+
+	router.Init(e, c)
+
 	go func() {
 		if err := e.Run(c.Server.Addr); err != nil {
 			panic(err)
