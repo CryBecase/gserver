@@ -2,21 +2,26 @@ package v1
 
 import (
 	"gserver/app/admin/internal/config"
+	"gserver/app/admin/internal/model"
 	"gserver/app/admin/internal/service"
 	"gserver/pkg/net/http/gin"
 )
 
-type User struct {
-	svc *service.UserSvc
+type IUserSvc interface {
+	Info(id int) (*model.User, error)
 }
 
-func NewUser(c *config.Config) *User {
-	return &User{
+type userAPI struct {
+	svc IUserSvc
+}
+
+func NewUser(c *config.Config) *userAPI {
+	return &userAPI{
 		svc: service.NewUserSvc(c),
 	}
 }
 
-func (u *User) Info(c *gin.Context) {
+func (u *userAPI) Info(c *gin.Context) {
 	type r struct {
 		Id int `json:"id" form:"id" binding:"required"`
 	}

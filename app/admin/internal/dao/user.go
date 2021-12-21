@@ -6,29 +6,29 @@ import (
 	"gserver/app/admin/internal/querypath"
 )
 
-type UserDAO struct {
+type userDAO struct {
 	c *config.Config
 }
 
-func NewUserDAO(c *config.Config) *UserDAO {
-	return &UserDAO{
+func NewUserDAO(c *config.Config) *userDAO {
+	return &userDAO{
 		c: c,
 	}
 }
 
-func (u *UserDAO) Create(q *querypath.User, user *model.User) error {
+func (u *userDAO) Create(q *querypath.User, user *model.User) error {
 	return q.Create(user)
 }
 
-func (u *UserDAO) Delete(q *querypath.User) error {
+func (u *userDAO) Delete(q *querypath.User) error {
 	return q.Delete(&model.User{})
 }
 
-func (u *UserDAO) Update(q *querypath.User, user *model.User) error {
+func (u *userDAO) Update(q *querypath.User, user *model.User) error {
 	return q.Update(user) // OR q.Save(user)
 }
 
-func (u *UserDAO) First(q *querypath.User) (*model.User, error) {
+func (u *userDAO) First(q *querypath.User) (*model.User, error) {
 	user := &model.User{}
 	if err := q.First(user); err != nil {
 		return nil, err
@@ -36,7 +36,7 @@ func (u *UserDAO) First(q *querypath.User) (*model.User, error) {
 	return user, nil
 }
 
-func (u *UserDAO) Find(q *querypath.User) ([]*model.User, error) {
+func (u *userDAO) Find(q *querypath.User) (model.UserSlice, error) {
 	users := make(model.UserSlice, 0)
 	if err := q.Find(&users); err != nil {
 		return nil, err
@@ -44,6 +44,6 @@ func (u *UserDAO) Find(q *querypath.User) ([]*model.User, error) {
 	return users, nil
 }
 
-func (u *UserDAO) Count(q *querypath.User) (int64, error) {
+func (u *userDAO) Count(q *querypath.User) (int64, error) {
 	return q.Count()
 }
