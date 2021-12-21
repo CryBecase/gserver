@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"gserver/app/admin/internel/config"
-	"gserver/app/admin/internel/model"
-	"gserver/app/admin/internel/querypath"
+	"gserver/app/admin/internal/config"
+	"gserver/app/admin/internal/model"
+	"gserver/app/admin/internal/querypath"
 )
 
 type UserDAO struct {

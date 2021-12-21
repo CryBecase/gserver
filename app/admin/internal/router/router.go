@@ -1,8 +1,8 @@
 package router
 
 import (
-	v1 "gserver/app/admin/internel/api/v1"
-	"gserver/app/admin/internel/config"
+	v1 "gserver/app/admin/internal/api/v1"
+	"gserver/app/admin/internal/config"
 	"gserver/pkg/net/http/gin"
 )
 

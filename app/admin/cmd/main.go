@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"gserver/app/admin/internel/config"
-	"gserver/app/admin/internel/server"
+	"gserver/app/admin/internal/config"
+	"gserver/app/admin/internal/server"
 
 	_ "gserver/pkg/encoding/form"
 	_ "gserver/pkg/encoding/json"

@@ -3,10 +3,10 @@ package service
 import (
 	"fmt"
 
-	"gserver/app/admin/internel/config"
-	"gserver/app/admin/internel/dao"
-	"gserver/app/admin/internel/model"
-	"gserver/app/admin/internel/querypath"
+	"gserver/app/admin/internal/config"
+	"gserver/app/admin/internal/dao"
+	"gserver/app/admin/internal/model"
+	"gserver/app/admin/internal/querypath"
 	"gserver/pkg/cache/redis"
 	"gserver/pkg/databse/mysql"
 )

@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"gserver/app/admin/internel/config"
-	"gserver/app/admin/internel/service"
+	"gserver/app/admin/internal/config"
+	"gserver/app/admin/internal/service"
 	"gserver/pkg/net/http/gin"
 )
 
