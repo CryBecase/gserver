@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	Conf     = &Config{}
+	Conf     = Config{}
 	confPath string
 )
 
@@ -35,5 +35,5 @@ func Init() error {
 	if err := viper.ReadInConfig(); err != nil {
 		return err
 	}
-	return viper.Unmarshal(Conf)
+	return viper.Unmarshal(&Conf)
 }

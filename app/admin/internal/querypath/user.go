@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"gorm.io/gorm"
 
-	"gserver/pkg/cache/redis"
+	"gserver/app/admin/internal/model"
 )
 
 type User struct {
@@ -16,7 +17,7 @@ type User struct {
 func NewUser(db *gorm.DB) *User {
 	return &User{
 		querypath: &querypath{
-			db: db,
+			db: db.Model(&model.User{}),
 			p:  nil,
 		},
 	}
@@ -917,7 +918,7 @@ func (u *User) SetPaginate(p *Paginate) *User {
 	return u
 }
 
-func (u *User) WithCache(redis *redis.Redis, key string, expire time.Duration) *User {
+func (u *User) WithCache(redis *redis.Client, key string, expire time.Duration) *User {
 	u.redis = &redisWrapper{redis, key, expire}
 	return u
 }

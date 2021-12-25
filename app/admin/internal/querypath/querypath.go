@@ -6,10 +6,9 @@ import (
 	"errors"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
-
-	"gserver/pkg/cache/redis"
 )
 
 type Paginate struct {
@@ -32,7 +31,7 @@ func (p *Paginate) Fix() {
 }
 
 type redisWrapper struct {
-	*redis.Redis
+	*redis.Client
 	key    string
 	expire time.Duration
 }
@@ -119,7 +118,8 @@ func (q *querypath) First(dest interface{}) error {
 func (q *querypath) Find(dest interface{}) error {
 	if q.p != nil {
 		// 分页不走缓存
-		return q.db.Limit(q.p.Size).Offset(q.p.OffSet()).Find(dest).Error
+		q.db.Limit(q.p.Size).Offset(q.p.OffSet())
+		return q.db.Find(dest).Error
 	}
 
 	if q.redis != nil {
@@ -180,8 +180,4 @@ func (q *querypath) Paginate(dest interface{}) (*Paginate, error) {
 func (q *querypath) ForUpdate() *querypath {
 	q.db.Clauses(clause.Locking{Strength: "UPDATE"})
 	return q
-}
-
-func (q *querypath) RawDB() *gorm.DB {
-	return q.db
 }

@@ -15,7 +15,7 @@ type userAPI struct {
 	svc IUserSvc
 }
 
-func NewUser(c *config.Config) *userAPI {
+func NewUser(c config.Config) *userAPI {
 	return &userAPI{
 		svc: service.NewUserSvc(c),
 	}

@@ -10,7 +10,7 @@ type IUserAPI interface {
 	Info(c *gin.Context)
 }
 
-func Init(e *gin.Engine, c *config.Config) {
+func Init(e *gin.Engine, c config.Config) {
 	var (
 		u IUserAPI = v1.NewUser(c)
 	)

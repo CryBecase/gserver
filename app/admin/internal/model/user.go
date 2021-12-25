@@ -4,14 +4,14 @@ import "time"
 
 // User 用户表
 type User struct {
-	Id        int       `gorm:"id;PRIMARY_KEY" json:"id"`         //
-	Username  string    `gorm:"username"       json:"username"`   //
-	Password  string    `gorm:"password"       json:"password"`   //
-	Telephone string    `gorm:"telephone"      json:"telephone"`  //
-	Birthday  string    `gorm:"birthday"       json:"birthday"`   //
-	Gender    int       `gorm:"gender"         json:"gender"`     //
-	CreatedAt time.Time `gorm:"created_at"     json:"created_at"` //
-	UpdatedAt time.Time `gorm:"updated_at"     json:"updated_at"` //
+	Id        int       `gorm:"column:id;primaryKey" json:"id"`         //
+	Username  string    `gorm:"column:username"      json:"username"`   //
+	Password  string    `gorm:"column:password"      json:"password"`   //
+	Telephone string    `gorm:"column:telephone"     json:"telephone"`  //
+	Birthday  string    `gorm:"column:birthday"      json:"birthday"`   //
+	Gender    int       `gorm:"column:gender"        json:"gender"`     //
+	CreatedAt time.Time `gorm:"column:created_at"    json:"created_at"` //
+	UpdatedAt time.Time `gorm:"column:updated_at"    json:"updated_at"` //
 }
 
 func (*User) TableName() string {

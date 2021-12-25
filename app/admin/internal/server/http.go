@@ -6,7 +6,7 @@ import (
 	"gserver/pkg/net/http/gin"
 )
 
-func InitHTTP(c *config.Config) {
+func InitHTTP(c config.Config) {
 	e := gin.New()
 	e.Use(gin.Logger(), gin.Recovery()) // TODO 用自己的代替 或者 重写 gin
 
